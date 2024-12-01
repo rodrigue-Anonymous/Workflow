@@ -107,7 +107,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('tasks.create') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Discussion par chat</span>
+                                <span>Ajouter et Assigner une tache</span>
                             </a>
 
                         </li><!--end nav-item-->
