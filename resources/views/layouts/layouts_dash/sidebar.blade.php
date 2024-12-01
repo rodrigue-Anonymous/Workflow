@@ -75,7 +75,7 @@
                     @if (Auth::user()->role =='user')
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -84,28 +84,28 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('projects.index') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Effectuer un paiement</span>
+                                <span>Listes des Projets</span>
                             </a>
 
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('projects.create') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Consulter son contrat de bail</span>
+                                <span>Ajoutez Nouveau project</span>
                             </a>
 
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <!-- <a class="nav-link" href="{ route('projects.edit') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Consulter l'historique des paiements</span>
-                            </a>
+                                <span>Mise a jour</span>
+                            </a> -->
 
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('tasks.create') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
                                 <span>Discussion par chat</span>
                             </a>
