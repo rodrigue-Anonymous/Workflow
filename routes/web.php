@@ -1,6 +1,5 @@
 <?php
-use App\Http\Controllers\Api\TaskController;
-use App\Http\Controllers\Api\ProjectController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,15 +7,10 @@ Route::get('/',   function () {
     return view('welcome');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard'); // Ajoutez une vue de tableau de bord si nécessaire
-    })->name('dashboard');
 
-    Route::resource('projects', ProjectController::class);
-    Route::resource('tasks', TaskController::class);
-});
-
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
