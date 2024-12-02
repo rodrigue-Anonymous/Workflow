@@ -174,7 +174,11 @@ Les contributions sont les bienvenues ! Si vous avez des suggestions ou souhaite
 
 ## Auteurs
 
+<<<<<<< HEAD
 - **Nom** - *Développeur principal* - [Rodrigue FAHOUBO](https://github.com/your-username)
+=======
+- **Nom** - *Développeur principal* - [Rodrigue Fahoubo](https://github.com/rodrigue-Anonymous/)
+>>>>>>> 03728dec8ffd89faaa33e31beb499d961dd2dd26
 
 ---
 
