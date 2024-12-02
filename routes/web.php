@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,8 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('projects', ProjectController::class);
 
     // Routes pour les tâches (si nécessaire, inclure un contrôleur de tâches)
-    //Route::resource('projects.tasks', TaskController::class)->except(['show']);
    Route::resource('tasks', TaskController::class);
+    
+   //Route pour afficher les users
+   Route::resource('users', UserController::class)->except(['show', 'edit', 'update']);
 
 
 });

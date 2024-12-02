@@ -24,48 +24,23 @@
                     <!-- ITEMS POUR L'ADMINISTRATEUR -->
                     @if (Auth::user()->role =='admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
                                 <span>Dashboard</span>
                             </a>
 
                         </li><!--end nav-item-->
-
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarGerer_bien" data-bs-toggle="collapse" role="button"
-                                aria-expanded="false" aria-controls="sidebarGerer_user">
+                            <a class="nav-link" href="{{ route('users.index') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
                                 <span>Gérer les utilisateurs</span>
                             </a>
-                            <div class="collapse " id="sidebarGerer_user">
-                                <ul class="nav flex-column">
-
-
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="apps-chat.html">AJOUTER UTILISATEURS</a>
-                                    </li><!--end nav-item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="apps-contact-list.html">LISTE AGENT IMMOBILIER</a>
-                                    </li><!--end nav-item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="apps-calendar.html">LISTE LOCATAIRES</a>
-                                    </li><!--end nav-item-->
-
-                                </ul><!--end nav-->
-                            </div><!--end startbarGerer_user-->
-                        </li><!--end nav-item-->
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
-                                <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Consulter les rapports financiers</span>
-                            </a>
 
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="lol.html">
+                            <a class="nav-link" href="{{ route('users.create') }}">
                                 <i class="iconoir-view-grid menu-icon"></i>
-                                <span>Auditer les contrats de bail</span>
+                                <span>Ajoutez des membres</span>
                             </a>
 
                         </li><!--end nav-item-->

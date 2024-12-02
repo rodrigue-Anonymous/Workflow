@@ -174,7 +174,7 @@ Les contributions sont les bienvenues ! Si vous avez des suggestions ou souhaite
 
 ## Auteurs
 
-- **Nom** - *Développeur principal* - [Votre Nom](https://github.com/your-username)
+- **Nom** - *Développeur principal* - [Rodrigue FAHOUBO](https://github.com/your-username)
 
 ---
 
