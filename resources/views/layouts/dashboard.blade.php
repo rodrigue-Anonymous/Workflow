@@ -19,36 +19,36 @@
     <!-- Statistiques -->
     <div class="row text-center g-4">
         <!-- Projets Complétés -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-12">
             <div class="panel futuristic-panel">
-                <div class="emoji bounce" style="font-size: 6rem;">🎯</div>
+                <div class="emoji bounce">🎯</div>
                 <h5>Projets Complétés</h5>
                 <p class="stat">{{ $completedProjects }}</p>
             </div>
         </div>
 
         <!-- Projets En Cours -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-12">
             <div class="panel futuristic-panel">
-                <div class="emoji rotate" style="font-size: 6rem;">🛠️</div>
+                <div class="emoji rotate">🛠️</div>
                 <h5>Projets En Cours</h5>
                 <p class="stat">{{ $ongoingProjects }}</p>
             </div>
         </div>
 
         <!-- Tâches Complétées -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-12">
             <div class="panel futuristic-panel">
-                <div class="emoji pulsate" style="font-size: 6rem;">🏆</div>
+                <div class="emoji pulsate">🏆</div>
                 <h5>Tâches Complétées</h5>
                 <p class="stat">{{ $completedTasks }}</p>
             </div>
         </div>
 
         <!-- Tâches En Cours -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 col-12">
             <div class="panel futuristic-panel">
-                <div class="emoji zoom" style="font-size: 6rem;">📋</div>
+                <div class="emoji zoom">📋</div>
                 <h5>Tâches En Cours</h5>
                 <p class="stat">{{ $ongoingTasks }}</p>
             </div>
@@ -80,13 +80,13 @@
         color: #c9d1d9;
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .container-fluid {
         position: relative;
         z-index: 2;
-        padding: 30px;
+        padding: 20px;
     }
 
     /* Message de Bienvenue */
@@ -217,6 +217,26 @@
     .futuristic-button:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 30px rgba(88, 166, 255, 0.8);
+    }
+
+    /* Responsivité */
+    @media (max-width: 768px) {
+        .welcome-banner h1 {
+            font-size: 2rem;
+        }
+
+        .emoji {
+            font-size: 4rem;
+        }
+
+        .panel {
+            padding: 15px;
+        }
+
+        .futuristic-button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
     }
 </style>
 
