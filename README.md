@@ -97,63 +97,30 @@ Ce projet est une plateforme de **gestion de workflows collaboratifs** comprenan
 
 Pour afficher les **captures d'écran** dans la section d'aperçu :
 
-1. **Ajoutez vos captures d'écran** dans le dossier **`public/captures`** :
-   - Exemple :
-     ```
-     public/captures/
-         capture1.png
-         capture2.png
-         capture3.png
-         capture4.png
-         capture5.png
-         capture6.png
-     ```
 
-2. **Afficher dynamiquement les captures dans la vue** :
-   - Utilisez le code suivant pour lister les captures disponibles :
-     ```blade
-     <div class="container">
-         <h2>Aperçu du Projet</h2>
-         <div class="row">
-             @foreach (glob(public_path('captures/*')) as $capture)
-                 <div class="col-md-4 my-3">
-                     <img src="{{ asset('captures/' . basename($capture)) }}" class="img-fluid" alt="Capture">
-                 </div>
-             @endforeach
-         </div>
-     </div>
      ```
+## Aperçu Visuel
 
-3. **Styliser les captures d'écran** :
-   - Ajoutez un style élégant aux images :
-     ```css
-     .img-fluid {
-         border-radius: 10px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-         transition: transform 0.3s;
-     }
-     .img-fluid:hover {
-         transform: scale(1.05);
-     }
-     ```
+### Tableau de Bord
+![Dashboard](captures/capture1.png)
+
+### Gestion des Projets
+![Projets](captures/capture2.png)
+
+### Gestion des Tâches
+![Tâches](captures/capture4.png)
+
 
 ---
 
 ### Améliorations futures
 
-1. **Automatisation de la gestion des rôles** :
-   - Inclure un **seeder** pour créer un compte administrateur par défaut lors de la configuration initiale.
-   - Ajouter une interface pour gérer les rôles via l'application.
 
-2. **Ajout de fonctionnalités avancées** :
-   - Gestion des permissions pour des rôles spécifiques.
-   - Historique et suivi des modifications.
-
-3. **Refonte UI** :
+. **Refonte UI** :
    - Intégration de **chart.js** ou autres bibliothèques pour des graphiques interactifs.
    - Amélioration de la responsivité sur tous les appareils.
 
-4. **Intégration API** :
+. **Intégration API** :
    - Ajouter des points d'accès RESTful pour permettre une gestion à distance.
 
 ---
