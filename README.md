@@ -1,9 +1,12 @@
-### Documentation : Aperçu du Projet avec Gestion des Captures d'Écran
+## Aperçu Visuel
 
-Ce projet est une plateforme de **gestion de workflows collaboratifs** comprenant la gestion des utilisateurs, des projets et des tâches, avec des rôles administratifs et utilisateurs simples. Voici un résumé de son fonctionnement et des étapes pour l'utiliser efficacement, notamment l'ajout d'**captures d'écran dynamiques** pour donner un aperçu visuel du projet.
+### Tableau de Bord
+![Dashboard](captures/capture1.png)
 
----
+### Gestion des Projets
+![Projets](captures/projects.png)
 
+<<<<<<< HEAD
 ### Fonctionnalités Principales
 
 1. **Gestion des utilisateurs** :
@@ -146,3 +149,7 @@ Ce projet est encore en développement. Il est possible que des fonctionnalités
 ---
 
 Avec ce **README.md**, tu as un guide complet pour quelqu'un qui souhaite cloner le projet et le faire fonctionner localement. Si tu veux ajouter d'autres détails, n'hésite pas à le faire. 😊
+=======
+### Gestion des Tâches
+![Tâches](captures/tasks.png)
+>>>>>>> 6bed3c6bdfccde5e315bcdbd1eb6c018e49c2bbd
