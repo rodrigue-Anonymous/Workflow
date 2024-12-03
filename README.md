@@ -109,35 +109,20 @@ Pour afficher les **captures d'écran** dans la section d'aperçu :
          capture6.png
      ```
 
-2. **Afficher dynamiquement les captures dans la vue** :
-   - Utilisez le code suivant pour lister les captures disponibles :
-     ```blade
-     <div class="container">
-         <h2>Aperçu du Projet</h2>
-         <div class="row">
-             @foreach (glob(public_path('captures/*')) as $capture)
-                 <div class="col-md-4 my-3">
-                     <img src="{{ asset('captures/' . basename($capture)) }}" class="img-fluid" alt="Capture">
-                 </div>
-             @endforeach
-         </div>
-     </div>
+
      ```
 
-3. **Styliser les captures d'écran** :
-   - Ajoutez un style élégant aux images :
-     ```css
-     .img-fluid {
-         border-radius: 10px;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-         transition: transform 0.3s;
-     }
-     .img-fluid:hover {
-         transform: scale(1.05);
-     }
-     ```
+<div class="container">
+    <h2>Aperçu</h2>
+    <div class="row">
+        @foreach (glob(public_path('captures/*')) as $capture)
+            <div class="col-md-4 my-3">
+                <img src="{{ asset('captures/' . basename($capture)) }}" class="img-fluid" alt="Capture">
+            </div>
+        @endforeach
+    </div>
+</div>
 
----
 
 ### Améliorations futures
 
