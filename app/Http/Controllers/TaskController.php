@@ -53,10 +53,10 @@ class TaskController extends Controller
             'priority' => 'required|in:low,medium,high',
             'assigned_to' => 'required|email|exists:users,email',
         ]);
-    
+
         // Récupérer l'utilisateur assigné
         $user = \App\Models\User::where('email', $request->assigned_to)->first();
-    
+
         // Créer la tâche
         $task = Task::create([
             'project_id' => $request->project_id,
@@ -66,14 +66,14 @@ class TaskController extends Controller
             'priority' => $request->priority,
             'assigned_to' => $user->id, // Sauvegarde l'ID de l'utilisateur assigné
         ]);
-    
+
         // Envoie un email à l'utilisateur assigné
         \Mail::to($user->email)->send(new TaskAssigned($task));
-    
-        return redirect()->route('projects.index')->with('success', 'Tâche créée et assignée avec succès.');
+
+        return redirect()->route('tasks.index')->with('success', 'Tâche créée et assignée avec succès.');
     }
-    
-    
+
+
 
     /**
      * Affiche les détails d'une tâche.
@@ -119,23 +119,22 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        // Vérification d'accès
-        if ($task->project->user_id !== auth()->id()) {
-            abort(403, 'Accès non autorisé.');
-        }
-
-        $request->validate([
-            'project_id' => 'required|exists:projects,id',
+        // Validation des données
+        $validated = $request->validate([
             'title' => 'required|max:255',
             'description' => 'nullable|max:500',
             'status' => 'required|in:not_started,in_progress,completed',
             'priority' => 'required|in:low,medium,high',
         ]);
 
-        $task->update($request->all());
+        // Mise à jour des données de la tâche
+        $task->update($validated);
 
+        // Redirection avec message de succès
         return redirect()->route('tasks.index')->with('success', 'Tâche mise à jour avec succès.');
     }
+
+
 
     /**
      * Supprime une tâche existante de la base de données.

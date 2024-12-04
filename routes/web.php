@@ -34,9 +34,19 @@ Route::middleware('auth')->group(function () {
 
     // Routes pour les tâches (si nécessaire, inclure un contrôleur de tâches)
    Route::resource('tasks', TaskController::class);
-    
+   Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+
+
    //Route pour afficher les users
    Route::resource('users', UserController::class)->except(['show', 'edit', 'update']);
+
+
+
+
+
+   // Route spécifique pour mettre à jour le statut d'un projet
+Route::patch('projects/{project}/status', [ProjectController::class, 'updateStatus'])->name('projects.updateStatus');
+
 
 
 });

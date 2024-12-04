@@ -20,4 +20,7 @@ class Project extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public const STATUS_ONGOING = 'ongoing';
+    public const STATUS_COMPLETED = 'completed';
 }

@@ -78,6 +78,13 @@
                                 <span>Ajoutez Nouveau project</span>
                             </a>
 
+
+                            <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tasks.index') }}">
+                                <i class="iconoir-view-grid menu-icon"></i>
+                                <span>Listes des Taches</span>
+                            </a>
+
                         </li><!--end nav-item-->
                         <li class="nav-item">
                             <!-- <a class="nav-link" href="{ route('projects.edit') }}">

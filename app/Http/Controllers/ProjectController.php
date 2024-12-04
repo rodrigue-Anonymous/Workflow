@@ -76,11 +76,34 @@ class ProjectController extends Controller
             // Si ce n'est pas le cas, redirige l'utilisateur ou renvoie une erreur
             return redirect()->route('projects.index')->with('error', 'Vous n\'êtes pas autorisé à voir ce projet.');
         }
-    
+
         // Récupère les tâches liées à ce projet
         $tasks = $project->tasks; // Relation définie dans le modèle Project
-    
+
         return view('projects.show', compact('project', 'tasks'));
     }
-    
+
+
+
+
+    public function updateStatus(Request $request, Project $project)
+    {
+        // Vérifier si l'utilisateur est autorisé à modifier ce projet
+        $this->authorize('update', $project);
+
+        // Valider que le statut est l'une des valeurs autorisées
+        $request->validate([
+            'status' => ['required', 'in:ongoing,completed'], // Validation pour les statuts
+        ]);
+
+        // Mettre à jour le statut du projet
+        $project->update([
+            'status' => $request->status,
+        ]);
+
+        // Redirection avec un message de confirmation
+        return redirect()->route('projects.index')->with('success', 'Le statut du projet a été mis à jour.');
+    }
+
+
 }

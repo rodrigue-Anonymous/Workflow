@@ -7,7 +7,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
     <meta content="" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modifier le Projet</title>
+    <title>Modifier la Tâche</title>
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -136,44 +136,57 @@
             <div class="col-md-3">
                 <h3></h3>
                 <ul class="sidebar-links">
-                    <li><a href="{{ route('projects.index') }}#">Retour au Dashboard</a></li>
-                    
+                    <li><a href="{{ route('tasks.index') }}">Retour à la liste des Tâches</a></li>
                 </ul>
             </div>
 
-            <!-- Formulaire de modification -->
+            <!-- Formulaire de modification de tâche -->
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Modifier le Projet</h4>
-                        <form action="{{ route('projects.update', $project) }}" method="POST">
+                        <h4 class="card-title">Modifier la Tâche</h4>
+                        <form action="{{ route('tasks.update', ['task' => $task->id]) }}" method="POST">
+
                             @csrf
                             @method('PUT')
 
+                            <!-- Titre -->
                             <div class="form-group">
                                 <label for="title">Titre</label>
-                                <input type="text" name="title" class="form-control" value="{{ $project->title }}" required>
+                                <input type="text" name="title" class="form-control" value="{{ $task->title }}" required>
                             </div>
 
+                            <!-- Description -->
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea name="description" class="form-control" rows="4">{{ $project->description }}</textarea>
+                                <textarea name="description" class="form-control" rows="4">{{ $task->description }}</textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label for="deadline">Date Limite</label>
-                                <input type="date" name="deadline" class="form-control" value="{{ $project->deadline }}" required>
-                            </div>
-
-
+                            <!-- Statut -->
                             <div class="form-group">
                                 <label for="status">Statut</label>
-                                <select name="status" class="form-control" id="status">
-                                    <option value="ongoing" {{ $project->status === 'ongoing' ? 'selected' : '' }}>En cours</option>
-                                    <option value="completed" {{ $project->status === 'completed' ? 'selected' : '' }}>Terminé</option>
+                                <select name="status" class="form-control">
+                                    <option value="not_started" {{ $task->status == 'not_started' ? 'selected' : '' }}>Non commencé</option>
+                                    <option value="in_progress" {{ $task->status == 'in_progress' ? 'selected' : '' }}>En cours</option>
+                                    <option value="completed" {{ $task->status == 'completed' ? 'selected' : '' }}>Terminé</option>
                                 </select>
                             </div>
 
+                            <!-- Priorité -->
+                            <div class="form-group">
+                                <label for="priority">Priorité</label>
+                                <select name="priority" class="form-control">
+                                    <option value="low" {{ $task->priority == 'low' ? 'selected' : '' }}>Basse</option>
+                                    <option value="medium" {{ $task->priority == 'medium' ? 'selected' : '' }}>Moyenne</option>
+                                    <option value="high" {{ $task->priority == 'high' ? 'selected' : '' }}>Haute</option>
+                                </select>
+                            </div>
+
+                            <!-- Date Limite -->
+                            <div class="form-group">
+                                <label for="deadline">Date Limite</label>
+                                <input type="date" name="deadline" class="form-control" value="{{ $task->deadline }}" required>
+                            </div>
 
                             <button type="submit" class="btn btn-success mt-3">Mettre à Jour</button>
                         </form>
